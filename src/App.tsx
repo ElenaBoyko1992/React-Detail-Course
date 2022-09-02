@@ -16,14 +16,12 @@ function hello() {
 
 function App(props: any) {
     console.log("App rendering")
-    return (
-        <div>
 
-            <OnOff/>
+    return (
+        <div className={'App'}>
             <OnOff/>
 
             <UncontrolledAccordion titleValue={"Menu"}/>
-            <UncontrolledAccordion titleValue={"Users"}/>
 
             <UncontrolledRating />
 
