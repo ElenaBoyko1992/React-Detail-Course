@@ -29,7 +29,9 @@ function App(props: any) {
                        onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
 
             {/*<UncontrolledOnOff/>*/}
-            <OnOff on={switchOn} onChange={setSwitchOn}/>
+            {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
+
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
             {/*
 
