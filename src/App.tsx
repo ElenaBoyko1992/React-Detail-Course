@@ -1,21 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {RatingValueType} from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
-import OnOff from "./components/OnOff/OnOff";
+import {GetValueOfUncontrolledInput, UncontrolledInput} from "./components/UncontrolledInputs/UncontrolledInput";
+import {ControlledCheckbox, ControlledInputs, ControlledSelect} from "./components/ControlledInputs/ControlledInputs";
 
-
-function hello() {
-    debugger
-    alert('Hello IT-KAMASUTRA')
-}
-
-//hello();
-
-function App(props: any) {
+function App() {
     console.log("App rendering")
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -32,6 +23,16 @@ function App(props: any) {
             {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
 
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+
+            <UncontrolledInput/>
+            <GetValueOfUncontrolledInput/>
+            <br/>
+            <br/>
+            <br/>
+            <ControlledInputs/>
+            <ControlledCheckbox/>
+            <ControlledSelect/>
+
 
             {/*
 
@@ -61,14 +62,14 @@ function App(props: any) {
     );
 }
 
-type PageTitlePropsType = {
+/*type PageTitlePropsType = {
     title: string
 }
 
 function PageTitle(props: PageTitlePropsType) {
     console.log("PageTitle rendering")
     return <h1>{props.title} </h1>
-}
+}*/
 
 
 export default App;
