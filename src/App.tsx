@@ -42,10 +42,12 @@ function App() {
             <br/>
             <br/>
             <br/>
-            <Select value={'any'} items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {
+            <Select items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {
                 title: 'Artem',
                 value: 3
-            }, {title: 'Viktor', value: 4}]} onChange={() =>{alert('')}}/>
+            }, {title: 'Viktor', value: 4}]} onChange={() => {
+                alert('')
+            }}/>
 
 
             {/*
