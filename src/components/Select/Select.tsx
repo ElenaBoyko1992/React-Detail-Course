@@ -1,4 +1,5 @@
-import {MouseEvent, useState} from "react";
+import {KeyboardEvent, useState} from "react";
+import s from './Select.module.css'
 
 type ItemType = {
     title: string
@@ -6,31 +7,41 @@ type ItemType = {
 }
 
 type SelectPropsType = {
-    /*  value: any*/
+    value: any
     onChange: (value: any) => void
     items: ItemType[]
 }
 
 export const Select = (props: SelectPropsType) => {
-    const [needToOpenList, setNeedToOpenList] = useState<boolean>(false)
-    const [value, setValue] = useState<string>('none')
-    const onChangeHandler = (title: string) => {
-        setValue(title)
+    const [active, setActive] = useState(false);
+    const [hoveredElementValue, setHoveredElementValue] = useState(props.value);
+    const selectedItem = props.items.find(i => i.value === props.value);
+    const hoveredItem = props.items.find(i => i.value === hoveredElementValue)
+
+    const toggleItems = () => {
+        setActive(!active)
     }
-    const toggleList = () => {
-        setNeedToOpenList(!needToOpenList)
+    const onItemClick = (value: any) => {
+        props.onChange(value);
+        toggleItems()
     }
-    const closeList = () => {
-        if (needToOpenList) {
-            setNeedToOpenList(false)
-        }
+    const onKeyUp = (e: KeyboardEvent<HTMLDivElement>)=>{
+
     }
 
     return (
-        <div>
-            <div onClick={toggleList} onBlur={closeList}>{value}</div>
-            {needToOpenList && props.items.map(i => <div onClick={() => onChangeHandler(i.title)}
-                                                         key={i.value}>{i.title}</div>)}
+        <div className={s.select + ' ' + (active ? s.active : '')} tabIndex={0} onKeyUp={onKeyUp}>
+            <span className={s.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
+            {
+                active && <div className={s.items}>
+                    {props.items.map(i => <div className={s.item + ' ' + (hoveredItem === i ? s.selected : '')}
+                                               key={i.value}
+                                               onClick={() => onItemClick(i.value)}
+                                               onMouseEnter={() => setHoveredElementValue(i.value )}
+                    >{i.title}</div>)
+                    }
+                </div>}
+
         </div>
     )
 }

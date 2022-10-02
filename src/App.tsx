@@ -13,6 +13,7 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false);
+    let [value, setValue] = useState(null);
 
     return (
         <div className={'App'}>
@@ -42,12 +43,10 @@ function App() {
             <br/>
             <br/>
             <br/>
-            <Select items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {
+            <Select items={[{title: 'Dimych', value: "1"}, {title: 'Valera', value: "2"}, {
                 title: 'Artem',
-                value: 3
-            }, {title: 'Viktor', value: 4}]} onChange={() => {
-                alert('')
-            }}/>
+                value: "3"
+            }, {title: 'Viktor', value: "s"}]} onChange={setValue} value={value}/>
 
 
             {/*
