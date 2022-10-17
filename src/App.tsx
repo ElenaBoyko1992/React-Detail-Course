@@ -7,6 +7,7 @@ import {GetValueOfUncontrolledInput, UncontrolledInput} from "./components/Uncon
 import {ControlledCheckbox, ControlledInputs, ControlledSelect} from "./components/ControlledInputs/ControlledInputs";
 import {Select} from "./components/Select/Select";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {Example1} from "./components/ReactMemo/ReactMemo";
 
 function App() {
     console.log("App rendering")
@@ -50,16 +51,14 @@ function App() {
             }, {title: 'Viktor', value: "s"}]} onChange={setValue} value={value}/>
 
 
-
-
-{/*            <Rating value={ratingValue} onClick={setRatingValue}/>
+            {/*            <Rating value={ratingValue} onClick={setRatingValue}/>
 
             <UncontrolledRating />
                         <OnOff/>*/}
 
             <UncontrolledAccordion titleValue={"Menu"}/>
 
-   {/*         <UncontrolledRating />*/}
+            {/*         <UncontrolledRating />*/}
 
 
             {/*            <OnOff/>
@@ -73,6 +72,8 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>*/}
+
+            <Example1/>
 
         </div>
     );
