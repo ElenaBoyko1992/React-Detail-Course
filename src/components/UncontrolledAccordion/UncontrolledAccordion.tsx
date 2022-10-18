@@ -7,7 +7,7 @@ type AccordionPropsType = {
     // collapsed: boolean
 }
 
-function UncontrolledAccordion(props: AccordionPropsType) {
+function UncontrolledAccordionSecret(props: AccordionPropsType) {
     console.log("Accordion rendering")
 
     /*let [collapsed, setCollapsed] = useState(false);*/
@@ -21,17 +21,21 @@ function UncontrolledAccordion(props: AccordionPropsType) {
     </div>
 }
 
+const UncontrolledAccordion = React.memo(UncontrolledAccordionSecret)
+
 type AccordionTitlePropsType = {
     title: string
     onClick: () => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleSecret(props: AccordionTitlePropsType) {
     console.log("AccordionTitle rendering")
     return <h3 onClick={() => props.onClick()}>--{props.title}--</h3>
 }
 
-function AccordionBody() {
+const AccordionTitle = React.memo(AccordionTitleSecret)
+
+function AccordionBodySecret() {
     console.log("AccordionBody rendering")
     return (
         <ul>
@@ -41,5 +45,7 @@ function AccordionBody() {
         </ul>
     );
 }
+
+const AccordionBody = React.memo(AccordionBodySecret)
 
 export default UncontrolledAccordion;

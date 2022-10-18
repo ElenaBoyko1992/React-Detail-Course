@@ -1,6 +1,7 @@
+import React from "react";
 import {ChangeEvent, useState} from "react";
 
-export const ControlledInputs = () => {
+const ControlledInputsSecret = () => {
     const [value, setValue] = useState('')
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
@@ -14,7 +15,9 @@ export const ControlledInputs = () => {
     )
 }
 
-export const ControlledCheckbox = () => {
+export const ControlledInputs = React.memo(ControlledInputsSecret)
+
+const ControlledCheckboxSecret = () => {
     const [value, setValue] = useState(true)
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.checked)
@@ -28,7 +31,9 @@ export const ControlledCheckbox = () => {
     )
 }
 
-export const ControlledSelect = () => {
+export const ControlledCheckbox = React.memo(ControlledCheckboxSecret);
+
+const ControlledSelectSecret = () => {
     const [value, setValue] = useState<string | undefined>(undefined)
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         setValue(e.currentTarget.value)
@@ -46,4 +51,6 @@ export const ControlledSelect = () => {
 
     )
 }
+
+export const ControlledSelect = React.memo(ControlledSelectSecret)
 

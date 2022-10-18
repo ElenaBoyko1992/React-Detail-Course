@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 
-const NewMessagesCounter = (props: { count: number }) => {
+const NewMessagesCounterSecret = (props: { count: number }) => {
     console.log("counter")
     return <div>{props.count}</div>
 }
+
+const NewMessagesCounter = React.memo(NewMessagesCounterSecret);
 
 const UsersSecret = (props: { users: Array<string> }) => {
     console.log("users")
@@ -12,7 +14,7 @@ const UsersSecret = (props: { users: Array<string> }) => {
 
 const Users = React.memo(UsersSecret);
 
-export const Example1 = () => {
+const Example1Secret = () => {
 
     console.log("example")
 
@@ -30,3 +32,5 @@ export const Example1 = () => {
         <Users users={users}/>
     </>
 }
+
+export const Example1 = React.memo(Example1Secret);

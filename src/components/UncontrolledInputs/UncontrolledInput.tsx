@@ -1,6 +1,6 @@
-import {ChangeEvent, useRef, useState} from "react";
+import React, {ChangeEvent, useRef, useState} from "react";
 
-export const UncontrolledInput = () => { //неконтролируемый инпут с пом. локального стейта
+const UncontrolledInputSecret = () => { //неконтролируемый инпут с пом. локального стейта
     const [value, setValue] = useState('');
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
@@ -11,7 +11,10 @@ export const UncontrolledInput = () => { //неконтролируемый ин
         </div>
     )
 };
-export const GetValueOfUncontrolledInput = () => { //неконтролируемый инпут с пом. рефов
+
+export const UncontrolledInput = React.memo(UncontrolledInputSecret)
+
+const GetValueOfUncontrolledInputSecret = () => { //неконтролируемый инпут с пом. рефов
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null)
 
@@ -27,3 +30,5 @@ export const GetValueOfUncontrolledInput = () => { //неконтролируе�
         </div>
     )
 };
+
+export const GetValueOfUncontrolledInput = React.memo(GetValueOfUncontrolledInputSecret);

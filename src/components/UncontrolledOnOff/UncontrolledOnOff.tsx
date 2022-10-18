@@ -4,7 +4,7 @@ type PropsType = {
     onChange: (on: boolean) => void
 }
 
-function UncontrolledOnOff(props: PropsType) {
+function UncontrolledOnOffSecret(props: PropsType) {
 
     let [on, setOn] = useState(false);
 
@@ -53,5 +53,7 @@ function UncontrolledOnOff(props: PropsType) {
         </div>
     );
 };
+
+const UncontrolledOnOff = React.memo(UncontrolledOnOffSecret)
 
 export default UncontrolledOnOff;
