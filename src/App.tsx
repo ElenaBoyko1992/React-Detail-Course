@@ -8,6 +8,7 @@ import {ControlledCheckbox, ControlledInputs, ControlledSelect} from "./componen
 import {Select} from "./components/Select/Select";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {Example1} from "./components/ReactMemo/ReactMemo";
+import {Example2} from "./components/UseMemo/UseMemo";
 
 function App() {
     console.log("App rendering")
@@ -74,6 +75,10 @@ function App() {
             <Rating value={5}/>*/}
 
             <Example1/>
+            <br/>
+            <br/>
+            <br/>
+            <Example2/>
 
         </div>
     );
