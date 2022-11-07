@@ -8,7 +8,7 @@ import {ControlledCheckbox, ControlledInputs, ControlledSelect} from "./componen
 import {Select} from "./components/Select/Select";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {Example1} from "./components/ReactMemo/ReactMemo";
-import {DifficultCountingExample, HelpsToReactMemo} from "./components/UseMemo/UseMemo";
+import {DifficultCountingExample, HelpsToReactMemo, LikeUseCallback} from "./components/UseMemo/UseMemoUseCallback";
 
 function App() {
     console.log("App rendering")
@@ -78,11 +78,15 @@ function App() {
             <br/>
             <br/>
             <br/>
-     {/*       <DifficultCountingExample/>*/}
+            {/*       <DifficultCountingExample/>*/}
             <br/>
             <br/>
             <br/>
             <HelpsToReactMemo/>
+            <br/>
+            <br/>
+            <br/>
+            <LikeUseCallback/>
 
         </div>
     );
