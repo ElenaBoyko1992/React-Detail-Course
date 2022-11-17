@@ -9,6 +9,7 @@ import {Select} from "./components/Select/Select";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {Example1} from "./components/ReactMemo/ReactMemo";
 import {DifficultCountingExample, HelpsToReactMemo, LikeUseCallback} from "./components/UseMemo/UseMemoUseCallback";
+import {ExampleUseState} from "./components/UseState/UseState";
 
 function App() {
     console.log("App rendering")
@@ -87,7 +88,13 @@ function App() {
             <br/>
             <br/>
             <LikeUseCallback/>
-
+            <br/>
+            <br/>
+            <br/>
+            <ExampleUseState/>
+            <br/>
+            <br/>
+            <br/>
         </div>
     );
 }
