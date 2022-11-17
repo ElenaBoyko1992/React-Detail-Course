@@ -10,6 +10,7 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion/Uncontroll
 import {Example1} from "./components/ReactMemo/ReactMemo";
 import {DifficultCountingExample, HelpsToReactMemo, LikeUseCallback} from "./components/UseMemo/UseMemoUseCallback";
 import {ExampleUseState} from "./components/UseState/UseState";
+import {ExampleUseEffect} from "./components/UseEffect/UseEffect";
 
 function App() {
     console.log("App rendering")
@@ -92,6 +93,10 @@ function App() {
             <br/>
             <br/>
             <ExampleUseState/>
+            <br/>
+            <br/>
+            <br/>
+            <ExampleUseEffect/>
             <br/>
             <br/>
             <br/>
