@@ -13,9 +13,10 @@ import {ExampleUseState} from "./components/UseState/UseState";
 import {
     ExampleUseEffect,
     SetIntervalExample,
-    SetIntervalExampleClock,
     SetTimeoutExample
 } from "./components/UseEffect/UseEffect";
+import {Clock} from "./components/Clock/Clock";
+import {ArrowClock} from "./components/Clock/ArrowClock";
 
 function App() {
     console.log("App rendering")
@@ -113,7 +114,11 @@ function App() {
             <br/>
             <br/>
             <br/>
-            <SetIntervalExampleClock/>
+            <Clock/>
+            <br/>
+            <br/>
+            <br/>
+            <ArrowClock/>
             <br/>
             <br/>
             <br/>

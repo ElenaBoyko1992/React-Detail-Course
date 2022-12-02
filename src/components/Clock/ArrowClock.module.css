@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clock {
+    width: 840px;
+    height: 840px;
+    margin: 50px auto;
+    border: 1px solid brown;
+    position: relative;
+}
+
+.sec {
+    display: block;
+    margin: 0 auto;
+    transform-origin: bottom;
+}
+
+.min {
+    position: absolute;
+    top: 0%;
+    left: 37%;
+}
