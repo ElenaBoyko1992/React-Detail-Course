@@ -7,7 +7,7 @@ export const ArrowClock = () => {
 
     const [date, setDate] = useState(new Date());
 
-    let seconds = date.getSeconds() * 6
+    let seconds = date.getSeconds() * 6 //6 потому что смещаем на 6 градусов в секунду (360 град / 60 сек)
     let minutes = date.getMinutes() * 6
 
     let [secArrow, setSecArrow] = useState(<img className={s.sec} src={arrow} alt=""
